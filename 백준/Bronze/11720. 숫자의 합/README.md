@@ -48,5 +48,6 @@ sum=sum(num)
 print(sum)
 ```
 ![image](https://github.com/user-attachments/assets/e677b9c2-e679-4047-8408-1518fa0215f6)
+
 방법2가 메모리, 시간, 코드 길이가 더 짧다. 
 
