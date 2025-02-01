@@ -1,7 +1,6 @@
-h_sum=0
-a_sum=0
-
-level= {
+score_sum=0
+total=0
+grade= {
     "A+":4.5,
     "A0":4.0,
     "B+":3.5,
@@ -12,14 +11,13 @@ level= {
     "D0":1.0,
     "F":0.0,
 }
-
-for n in range(20):
+for _ in range(20):
     i=input().split()
     if i[2]=="P":
         continue
-    class_avg=level[i[2]]
-    a=float(i[1])*class_avg
-    a_sum+=a
-    h_sum+=float(i[1])
-    main_avg=a_sum / h_sum
+    score=float(i[1])
+    a=score*grade[i[2]]
+    total+=a
+    score_sum+=score
+    main_avg=total/score_sum
 print(round(main_avg,7))
