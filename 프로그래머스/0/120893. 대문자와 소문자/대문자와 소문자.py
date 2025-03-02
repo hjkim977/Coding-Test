@@ -1,7 +1,7 @@
 def solution(s):
     answer = ''
     for i in s:
-        if i in 'abcdefghijklmnopqrstuvwxyz':
+        if i.islower():
             answer+=i.upper()
         else:
             answer+=i.lower()
