@@ -1,10 +1,7 @@
 def solution(myString, pat):
-    c=''
-    for i in myString:
-        if i=='A':
-            c+='B'
-        elif i=='B':
-            c+='A'
-    if pat in c:
+    myString=myString.replace('A','C')
+    myString=myString.replace('B','A')
+    myString=myString.replace('C','B')
+    if pat in myString:
         return 1
     return 0
