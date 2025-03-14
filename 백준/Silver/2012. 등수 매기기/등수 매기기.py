@@ -1,10 +1,7 @@
 import sys
 n=int(sys.stdin.readline())
-real=[]
+real = [i for i in range(1,n+1)]
 predict=[]
-
-for i in range(1,n+1):
-    real.append(i)
 
 for _ in range(n):
     p=int(sys.stdin.readline())
