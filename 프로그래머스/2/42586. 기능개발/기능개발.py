@@ -1,7 +1,7 @@
 def solution(pro, speeds):
     answer = []
     days = []
-    queue=[]
+    queue = []
     
     for i in range(len(pro)):
         remain=100-pro[i]
@@ -10,9 +10,7 @@ def solution(pro, speeds):
         else:
             days.append(remain//speeds[i]+1)
 
-    queue.append(days[0])
-
-    for i in range(1,len(days)):
+    for i in range(len(days)):
         if len(queue)==0 or queue[0]>=days[i]:
             queue.append(days[i])
         else:
