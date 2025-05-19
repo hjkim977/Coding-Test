@@ -1,18 +1,22 @@
+#bfs(최소)
+
 import sys
 from collections import deque
 n, m = map(int, sys.stdin.readline().split())
 board = []
-temp = []
+coins = []
 for i in range(n):
     board.append(list(sys.stdin.readline().rstrip()))
     for j in range(m):
         if board[i][j] == "o":
-            temp.append((i, j))
-q = deque()
-q.append((temp[0][0], temp[0][1], temp[1][0], temp[1][1], 0))
+            coins.append((i, j))
+
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
+
 def bfs():
+    q = deque()
+    q.append((coins[0][0], coins[0][1], coins[1][0], coins[1][1], 0))
     while q:
         x1, y1, x2, y2, count = q.popleft()
         if count >= 10:
