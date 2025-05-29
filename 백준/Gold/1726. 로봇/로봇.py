@@ -11,15 +11,10 @@ visited = [[[False]*4 for _ in range(n)] for _ in range(m)]
 # 좌표 맞추기
 sx -= 1
 sy -= 1
+sd -= 1
 ex -= 1
 ey -= 1
-
-# 방향을 인덱스 0~3으로 변환 (1:동, 2:서, 3:남, 4:북)
-def convert_dir(d):
-    return {1:0, 2:1, 3:2, 4:3}[d]
-
-sd = convert_dir(sd)
-ed = convert_dir(ed)
+ed -= 1
 
 dx=[0, 0, 1, -1] #동서남북
 dy=[1, -1, 0, 0]
