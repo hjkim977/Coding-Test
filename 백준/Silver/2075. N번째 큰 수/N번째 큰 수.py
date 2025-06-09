@@ -1,13 +1,13 @@
-import heapq, sys
-n=int(sys.stdin.readline())
-s_heap=[]
-for _ in range(n):
-    list=map(int,sys.stdin.readline().split())
-    for l in list:
-        if len(s_heap)<n:
-            heapq.heappush(s_heap,l)
+import heapq
+n = int(input())
+heap = []
+for m in range(n):
+    graph = list(map(int,input().split()))
+    for g in graph:
+        if m==0:
+            heapq.heappush(heap,g)
         else:
-            if s_heap[0]<l:
-                heapq.heappop(s_heap)
-                heapq.heappush(s_heap,l)
-print(s_heap[0])
+            if heap[0]<g:
+                heapq.heappop(heap)
+                heapq.heappush(heap,g)
+print(heap[0])
