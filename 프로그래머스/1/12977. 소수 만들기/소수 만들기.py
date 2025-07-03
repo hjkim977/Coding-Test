@@ -1,5 +1,5 @@
 def solution(nums):
-    nums.sort()
+    
     result = 0
     
     def find(n):
@@ -10,7 +10,6 @@ def solution(nums):
                 return False
         return True
         
-    
     def backtrack(arr, start, pick):
         nonlocal result #solution 내부 지역변수라서 nonlocal
         
