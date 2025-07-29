@@ -1,21 +1,22 @@
 import sys
-t=int(sys.stdin.readline())
+input=sys.stdin.readline
+t = int(input())
 
-for x in range(t):
-    n=int(sys.stdin.readline())
-    score=[]
+for _ in range(t):
+    n = int(input())
+    a = []
 
-    for y in range(n):
-        d,i=list(map(int,sys.stdin.readline().split()))
-        score.append((d,i))
+    for _ in range(n):
+        s = tuple(map(int,input().split()))
+        a.append(s)
+    a.sort()
 
-    score.sort()
-    best=score[0][1]
+    best = a[0][1]
+    cnt = 1 #best 한명 뽑힘
 
-    count=1
+    for i in range(1,len(a)):
+        if best>a[i][1]:
+            cnt+=1
+            best = a[i][1]
 
-    for d,i in score:
-        if best>i:
-            best=i
-            count+=1
-    print(count)
+    print(cnt)
