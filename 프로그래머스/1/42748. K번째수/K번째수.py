@@ -1,8 +1,8 @@
 def solution(array, commands):
-    answer = []
+    l = []
     for command in commands:
-        i,j,k = command
-        a=array[i-1:j]
-        a.sort()
-        answer.append(a[k-1])
-    return answer
+        i,j,k = command[0]-1,command[1],command[2]-1
+        pick = array[i:j]
+        pick.sort()
+        l.append(pick[k])
+    return l
