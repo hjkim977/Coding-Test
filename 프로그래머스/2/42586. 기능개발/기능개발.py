@@ -1,22 +1,23 @@
-def solution(pro, speeds):
-    answer = []
-    days = []
-    queue = []
+def solution(progresses, speeds):
+    works=[] #작업
+    stack=[]
+    answer=[]
     
-    for i in range(len(pro)):
-        remain=100-pro[i]
-        if remain%speeds[i]==0:
-            days.append(remain//speeds[i])
+    for idx in range(len(progresses)):
+        remain=100-progresses[idx]
+        if remain%speeds[idx]==0:
+            works.append(remain//speeds[idx])
         else:
-            days.append(remain//speeds[i]+1)
-
-    for i in range(len(days)):
-        if len(queue)==0 or queue[0]>=days[i]:
-            queue.append(days[i])
+            works.append(remain//speeds[idx]+1)
+    
+    for i in range(len(works)):
+        if stack==[] or stack[0]>=works[i]:
+            stack.append(works[i])
         else:
-            answer.append(len(queue))
-            queue.clear()
-            queue.append(days[i])       
-    answer.append(len(queue))
-                           
+            answer.append(len(stack))
+            stack=[]
+            stack.append(works[i])
+        
+    if stack:
+        answer.append(len(stack))
     return answer
