@@ -1,12 +1,13 @@
 def solution(s):
-    count = 0
+    stack=[]
     
-    for char in s:
-        if char == "(":
-            count += 1
-        else:
-            count -= 1
+    for i in s:
+        if stack==[] or i=='(':
+            stack.append(i)
+        elif stack[0]=='(' and i==')':
+            stack.pop()
+    if stack:
+        return False
+    else:
+        return True
         
-        if count < 0:
-            return False
-    return count==0
