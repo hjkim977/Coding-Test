@@ -10,4 +10,4 @@ def solution(price, money, count):
             if money-total>=0:
                 return 0
             else:
-                return abs(total-money)
+                return total-money
