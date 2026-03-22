@@ -1,0 +1,10 @@
+def solution(citations):
+    answer = 0
+    sorted_citation = sorted(citations,reverse = True)
+    for i in range(len(citations)):
+        if sorted_citation[i] < i+1:
+            answer = i
+            return answer
+
+    answer = len(citations)
+    return answer
